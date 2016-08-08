@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.extuser.web.department.DepartmentBrowse"
+        focusComponent="departmentsTable"
+        lookupComponent="departmentsTable"
+        messagesPack="com.company.extuser.web.department">
+    <dsContext>
+        <collectionDatasource id="departmentsDs"
+                              class="com.company.extuser.entity.Department"
+                              view="_local">
+            <query>
+                <![CDATA[select e from extuser$Department e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="departmentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="departmentsTable"
+                datasource="departmentsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="departmentsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="telephone"/>
+                <column id="roomNumber"/>
+            </columns>
+            <rows datasource="departmentsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="departmentsTable.create"/>
+                <button id="editBtn"
+                        action="departmentsTable.edit"/>
+                <button id="removeBtn"
+                        action="departmentsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

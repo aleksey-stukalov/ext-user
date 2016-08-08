@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/screens.xml"/>
+    <screen id="sec$User.edit"
+            template="com/company/extuser/web/useredit/ext-user-edit.xml"/>
+    <screen id="extuser$Department.browse"
+            template="com/company/extuser/web/department/department-browse.xml"/>
+    <screen id="extuser$Department.edit"
+            template="com/company/extuser/web/department/department-edit.xml"/>
+</screen-config>
