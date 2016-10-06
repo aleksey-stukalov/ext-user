@@ -20,4 +20,4 @@ In order to show fields we extend the standard [_User Screen_](modules/web/src/c
 
 __All the steps can be completed fast and easy, using the power of the CUBA Studio, which will scaffold classes, views and screens for you.__
 
-Based on CUBA Platform 6.2.3
+Based on CUBA Platform 6.3.0.RC2
