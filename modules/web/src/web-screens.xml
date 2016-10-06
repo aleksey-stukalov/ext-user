@@ -7,4 +7,8 @@
             template="com/company/extuser/web/department/department-browse.xml"/>
     <screen id="extuser$Department.edit"
             template="com/company/extuser/web/department/department-edit.xml"/>
+    <screen id="extuser$Request.browse"
+            template="com/company/extuser/web/request/request-browse.xml"/>
+    <screen id="extuser$Request.edit"
+            template="com/company/extuser/web/request/request-edit.xml"/>
 </screen-config>

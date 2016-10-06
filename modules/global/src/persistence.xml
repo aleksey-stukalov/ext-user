@@ -5,5 +5,6 @@
                       transaction-type="RESOURCE_LOCAL">
         <class>com.company.extuser.entity.ExtUser</class>
         <class>com.company.extuser.entity.Department</class>
+        <class>com.company.extuser.entity.Request</class>
     </persistence-unit>
 </persistence>

@@ -3,5 +3,6 @@
     <menu id="application"
           insertBefore="administration">
         <item id="extuser$Department.browse"/>
+        <item id="extuser$Request.browse"/>
     </menu>
 </menu-config>

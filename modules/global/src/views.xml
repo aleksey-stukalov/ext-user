@@ -7,4 +7,12 @@
         <property name="department"
                   view="_minimal"/>
     </view>
+    <view class="com.company.extuser.entity.Request"
+          extends="_local"
+          name="request-view">
+        <property name="user"
+                  view="_minimal"/>
+        <property name="department"
+                  view="_minimal"/>
+    </view>
 </views>

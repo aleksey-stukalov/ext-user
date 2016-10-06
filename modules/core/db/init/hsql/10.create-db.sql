@@ -22,3 +22,21 @@ alter table SEC_USER add column DEPARTMENT_ID varchar(36) ^
 alter table SEC_USER add column DTYPE varchar(100) ^
 update SEC_USER set DTYPE = 'extuser$ExtUser' where DTYPE is null ^
 -- end SEC_USER
+-- begin EXTUSER_REQUEST
+create table EXTUSER_REQUEST (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    TEXT longvarchar not null,
+    USER_ID varchar(36) not null,
+    DEPARTMENT_ID varchar(36),
+    --
+    primary key (ID)
+)^
+-- end EXTUSER_REQUEST
