@@ -3,14 +3,14 @@
 This example shows how to extend system CUBA entities, taking _User_ entity as an example.
 
 
-### Entending System Entity
+### Extending System Entity
 
 [__ExtUser__](modules/global/src/com/company/extuser/entity/ExtUser.java) entity extends and replaces __User__ entity by adding two fields:
 
 - __address__ of type String
 - [__department__](modules/global/src/com/company/extuser/entity/Department.java), which is associated to the Department entity, declared in the project 
 
-### Entending System View
+### Extending System View
 
 In order to reflect changes in the __User Editor__ screen we need to create [a new view](modules/global/src/views.xml), which extends the system _user.edit_ view. In order to override the old system view, the extending view has the same name as its ancestor.
 
