@@ -19,5 +19,3 @@ In order to reflect changes in the __User Editor__ screen we need to create [a n
 In order to show fields we extend the standard [_User Screen_](modules/web/src/com/company/extuser/web/useredit/ext-user-edit.xml), coming with the CUBA Platform, and register it in the [web-screens.xml](modules/web/src/web-screens.xml) file.
 
 __All the steps can be completed fast and easy, using the power of the CUBA Studio, which will scaffold classes, views and screens for you.__
-
-Based on CUBA Platform 6.3.0.RC2
