@@ -11,4 +11,8 @@
             template="com/company/extuser/web/request/request-browse.xml"/>
     <screen id="extuser$Request.edit"
             template="com/company/extuser/web/request/request-edit.xml"/>
+    <screen id="extuser$RequestTag.browse"
+            template="com/company/extuser/web/requesttag/request-tag-browse.xml"/>
+    <screen id="extuser$RequestTag.edit"
+            template="com/company/extuser/web/requesttag/request-tag-edit.xml"/>
 </screen-config>

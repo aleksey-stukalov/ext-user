@@ -4,5 +4,6 @@
           insertBefore="administration">
         <item id="extuser$Department.browse"/>
         <item id="extuser$Request.browse"/>
+        <item screen="extuser$RequestTag.browse"/>
     </menu>
 </menu-config>

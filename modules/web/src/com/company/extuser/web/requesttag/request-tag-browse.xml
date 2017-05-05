@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.extuser.web.requesttag.RequestTagBrowse"
+        focusComponent="requestTagsTable"
+        lookupComponent="requestTagsTable"
+        messagesPack="com.company.extuser.web.requesttag">
+    <dsContext>
+        <groupDatasource id="requestTagsDs"
+                         class="com.company.extuser.entity.RequestTag"
+                         view="_local">
+            <query>
+                <![CDATA[select e from extuser$RequestTag e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="requestTagsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="requestTagsTable"
+                datasource="requestTagsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="requestTagsTable"
+                    multiselect="true"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="requestTagsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="requestTagsTable.create"/>
+                <button id="editBtn"
+                        action="requestTagsTable.edit"/>
+                <button id="removeBtn"
+                        action="requestTagsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

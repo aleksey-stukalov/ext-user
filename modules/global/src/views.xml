@@ -14,5 +14,7 @@
                   view="_minimal"/>
         <property name="department"
                   view="_minimal"/>
+        <property name="tags"
+                  view="_minimal"/>
     </view>
 </views>

@@ -6,5 +6,6 @@
         <class>com.company.extuser.entity.ExtUser</class>
         <class>com.company.extuser.entity.Department</class>
         <class>com.company.extuser.entity.Request</class>
+        <class>com.company.extuser.entity.RequestTag</class>
     </persistence-unit>
 </persistence>

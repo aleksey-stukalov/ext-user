@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        caption="msg://editCaption"
+        caption="msg://editorCaption"
         class="com.company.extuser.web.request.RequestEdit"
         datasource="requestDs"
         focusComponent="fieldGroup"
@@ -8,7 +8,17 @@
     <dsContext>
         <datasource id="requestDs"
                     class="com.company.extuser.entity.Request"
-                    view="request-view"/>
+                    view="request-view">
+            <collectionDatasource id="tagsDs"
+                                  property="tags"/>
+        </datasource>
+        <collectionDatasource id="usersDs"
+                              class="com.company.extuser.entity.ExtUser"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from extuser$ExtUser e]]>
+            </query>
+        </collectionDatasource>
         <collectionDatasource id="departmentsDs"
                               class="com.company.extuser.entity.Department"
                               view="_minimal">
@@ -21,17 +31,47 @@
                 width="800"/>
     <layout expand="windowActions"
             spacing="true">
-        <fieldGroup id="fieldGroup"
-                    datasource="requestDs">
-            <column width="250px">
-                <field id="text"
-                       rows="5"/>
-                <field id="user"
-                       enable="false"/>
-                <field id="department"
-                       optionsDatasource="departmentsDs"/>
-            </column>
-        </fieldGroup>
+        <hbox expand="tagsBox"
+              spacing="true"
+              width="100%">
+            <fieldGroup id="fieldGroup"
+                        datasource="requestDs">
+                <column width="250px">
+                    <field property="text"
+                           rows="5"/>
+                    <field optionsDatasource="usersDs"
+                           property="user"/>
+                    <field optionsDatasource="departmentsDs"
+                           property="department"/>
+                </column>
+            </fieldGroup>
+            <groupBox id="tagsBox"
+                      caption="msg://com.company.extuser.entity/Request.tags"
+                      spacing="true">
+                <table id="tagsTable"
+                       height="250px"
+                       width="100%">
+                    <actions>
+                        <action id="add"
+                                icon="icons/plus-btn.png"
+                                openType="DIALOG"/>
+                        <action id="exclude"/>
+                        <action id="remove"
+                                icon="icons/delete-from-set.png"/>
+                    </actions>
+                    <columns>
+                        <column id="name"/>
+                    </columns>
+                    <rows datasource="tagsDs"/>
+                    <buttonsPanel>
+                        <button action="tagsTable.add"
+                                icon="icons/plus-btn.png"/>
+                        <button action="tagsTable.remove"
+                                icon="icons/delete-from-set.png"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
+        </hbox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>
