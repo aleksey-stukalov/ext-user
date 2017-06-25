@@ -23,3 +23,5 @@ In order to show fields we extend the standard [_User Screen_](modules/web/src/c
 The sample aslo shows how the extended User entity can be used. In the [Request Edit](https://github.com/aleksey-stukalov/ext-user/blob/master/modules/web/src/com/company/extuser/web/request/RequestEdit.java) screen there are two fields, that should be populated by default (```Request#user``` and ```Request#department```) from the currently logged-in user.
 
 __All the steps can be completed fast and easy, using the power of the CUBA Studio, which will scaffold classes, views and screens for you.__
+
+P.S. Find another way of extending the system user entity in [this sample](https://github.com/aleksey-stukalov/session-attributes).
