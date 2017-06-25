@@ -15,7 +15,7 @@ import java.util.List;
 public class RequestEdit extends AbstractEditor<Request> {
 
     @Inject
-    protected UserSessionSource userSessionSource;
+    private UserSessionSource userSessionSource;
 
     @Inject
     private DataManager dataManager;
@@ -37,7 +37,7 @@ public class RequestEdit extends AbstractEditor<Request> {
         super.initNewItem(item);
 
         LoadContext<RequestTag> tagLoadContext =  LoadContext.create(RequestTag.class)
-                .setQuery(new LoadContext.Query("select e from extuser$RequestTag e"));
+                .setQuery(LoadContext.createQuery("select e from extuser$RequestTag e"));
         List<RequestTag> tags = dataManager.loadList(tagLoadContext);
         item.setTags(tags);
 

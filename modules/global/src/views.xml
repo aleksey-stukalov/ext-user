@@ -3,7 +3,6 @@
     <view class="com.company.extuser.entity.ExtUser"
           extends="user.edit"
           name="user.edit">
-        <property name="address"/>
         <property name="department"
                   view="_minimal"/>
     </view>
