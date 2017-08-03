@@ -1,12 +1,9 @@
 package com.company.extuser.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Column;
-import com.haulmont.cuba.security.entity.User;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.annotation.Extends;
+import com.haulmont.cuba.security.entity.User;
+
+import javax.persistence.*;
 
 @Extends(User.class)
 @Entity(name = "extuser$ExtUser")
@@ -28,7 +25,6 @@ public class ExtUser extends User {
         return department;
     }
 
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -36,6 +32,5 @@ public class ExtUser extends User {
     public String getAddress() {
         return address;
     }
-
 
 }

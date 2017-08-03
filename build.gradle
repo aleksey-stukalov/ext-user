@@ -4,13 +4,13 @@
  */
 
 buildscript {
-    ext.cubaVersion = '6.5.5'
+    ext.cubaVersion = '6.6.1'
     repositories {
         maven {
             url 'https://repo.cuba-platform.com/content/groups/work'
             credentials {
-                username(rootProject.hasProperty('repoUser') ? rootProject['repoUser'] : 'developer')
-                password(rootProject.hasProperty('repoPass') ? rootProject['repoPass'] : 'Haul2010')
+                username(rootProject.hasProperty('repoUser') ? rootProject['repoUser'] : 'cuba')
+                password(rootProject.hasProperty('repoPass') ? rootProject['repoPass'] : 'cuba123')
             }
         }
         
@@ -208,7 +208,7 @@ task restart(dependsOn: ['stop', ':app-core:deploy', ':app-web:deploy'], descrip
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
+    gradleVersion = '3.4'
 }
 
 apply from: 'extra.gradle'
