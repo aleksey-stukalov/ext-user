@@ -22,6 +22,8 @@ public class RequestEdit extends AbstractEditor<Request> {
 
     @Override
     protected void initNewItem(Request item) {
+        super.initNewItem(item);
+
         User user = userSessionSource.getUserSession().getUser();
 
         LoadContext<ExtUser> loadContext = LoadContext.create(ExtUser.class)
@@ -33,8 +35,6 @@ public class RequestEdit extends AbstractEditor<Request> {
             item.setUser(extUser);
             item.setDepartment(extUser.getDepartment());
         }
-
-        super.initNewItem(item);
 
         LoadContext<RequestTag> tagLoadContext =  LoadContext.create(RequestTag.class)
                 .setQuery(LoadContext.createQuery("select e from extuser$RequestTag e"));
